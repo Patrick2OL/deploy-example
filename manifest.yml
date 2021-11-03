@@ -1,0 +1,8 @@
+---
+applications:
+  - name: terapic-fisic-helper-net5-kaboom
+    memory: 128M
+    instances: 1
+    buildpacks:
+      - dotnet_core_buildpack
+    stack: cflinuxfs3

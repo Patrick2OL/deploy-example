@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "mssql1": {
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/LAPTOP-1LEAIUDF/databases/DBTerapicFisicHelper",
+      "type": "mssql.azure",
+      "connectionId": "LAPTOP-1LEAIUDF.database.windows.net",
+      "secretStore": "AzureAppSettings"
+    }
+  }
+}

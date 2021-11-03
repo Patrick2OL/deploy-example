@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerapicFisicHelper.Web", "TerapicFisicHelper.Web\TerapicFisicHelper.Web.csproj", "{926DB152-5875-40E5-8FE4-F88085EA6346}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerapicFisicHelper.Entities", "TerapicFisicHelper.Entities\TerapicFisicHelper.Entities.csproj", "{15BE562D-EF1A-44CC-AE98-470958960268}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerapicFisicHelper.Data", "TerapicFisicHelper.Data\TerapicFisicHelper.Data.csproj", "{8A7A6213-645D-48C9-AF04-9001C52B4CF5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerapicFisicHelper.NUnitTest", "TerapicFisicHelper.NUnitTest\TerapicFisicHelper.NUnitTest.csproj", "{D93AF437-8DC8-4EED-B9BF-43EA435B4A8A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{926DB152-5875-40E5-8FE4-F88085EA6346}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{926DB152-5875-40E5-8FE4-F88085EA6346}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{926DB152-5875-40E5-8FE4-F88085EA6346}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{926DB152-5875-40E5-8FE4-F88085EA6346}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15BE562D-EF1A-44CC-AE98-470958960268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15BE562D-EF1A-44CC-AE98-470958960268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15BE562D-EF1A-44CC-AE98-470958960268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15BE562D-EF1A-44CC-AE98-470958960268}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A7A6213-645D-48C9-AF04-9001C52B4CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A7A6213-645D-48C9-AF04-9001C52B4CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A7A6213-645D-48C9-AF04-9001C52B4CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A7A6213-645D-48C9-AF04-9001C52B4CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93AF437-8DC8-4EED-B9BF-43EA435B4A8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93AF437-8DC8-4EED-B9BF-43EA435B4A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93AF437-8DC8-4EED-B9BF-43EA435B4A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93AF437-8DC8-4EED-B9BF-43EA435B4A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {094F2CC1-9635-4415-8B3D-75C015C95AF6}
+	EndGlobalSection
+EndGlobal
