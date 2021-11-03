@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: terapic-fisic-helper-net5-kaboom
+  - name: DeployExample
     memory: 256M
     instances: 1
     buildpacks:
