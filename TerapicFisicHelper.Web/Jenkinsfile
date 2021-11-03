@@ -45,7 +45,7 @@ pipeline {
 //                     bat '/usr/local/bin/cf login -a https://api.us-south.cf.cloud.ibm.com -u $USERNAME -p $PASSWORD'
 //                     bat '/usr/local/bin/cf push'
 //                 }
-//                 bat 'copy TerapicFisicHelper.Web/manifest.yml TerapicFisicHelper.Web/bin/Release/net5.0/'
+                bat 'copy TerapicFisicHelper.Web/manifest.yml TerapicFisicHelper.Web/bin/Release/net5.0'
                 pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [manifestFile: 'TerapicFisicHelper.Web/manifest.yml'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
             } 
 //             pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [manifestFile: 'TerapicFisicHelper.Web/manifest.yml'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
