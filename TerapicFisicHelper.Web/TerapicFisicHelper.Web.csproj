@@ -2,7 +2,7 @@
 
   <PropertyGroup>
 <!--    <TargetFramework>net5.0</TargetFramework>-->
-    <TargetFrameworks>netcoreapp5.0;net5.0</TargetFrameworks>
+    <TargetFramework>netcoreapp5.0</TargetFramework>
     <UserSecretsId>31b3d36c-ac79-4a18-acf5-9b6dff2ce009</UserSecretsId>
     <IsPackable>true</IsPackable>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
