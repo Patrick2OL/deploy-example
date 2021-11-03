@@ -34,7 +34,8 @@ pipeline {
             
         stage ('Package') {
             steps {
-                bat "dotnet pack --include-source"
+                //bat "dotnet pack --include-source"
+                echo 'pack'
             }
         }
         stage ('Deployment') {
