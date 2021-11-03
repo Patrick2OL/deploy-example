@@ -142,7 +142,7 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp5.0"
+          "net5.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -150,7 +150,7 @@
         },
         "frameworks": {
           "net5.0": {
-            "targetAlias": "netcoreapp5.0",
+            "targetAlias": "net5.0",
             "projectReferences": {
               "D:\\deploy-example\\Server-Side-master\\TerapicFisicHelper.Data\\TerapicFisicHelper.Data.csproj": {
                 "projectPath": "D:\\deploy-example\\Server-Side-master\\TerapicFisicHelper.Data\\TerapicFisicHelper.Data.csproj"
@@ -169,7 +169,7 @@
       },
       "frameworks": {
         "net5.0": {
-          "targetAlias": "netcoreapp5.0",
+          "targetAlias": "net5.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
