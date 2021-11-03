@@ -21,7 +21,7 @@ pipeline {
             
         stage ('Build') {
             steps {
-                bat '"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" TerapicFisicHelper.API.sln -p:Configuration=Release -p:Platform=\"Any CPU\"'
+                bat '"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" p:DeployOnBuild=true p:DeployTarget=Package p:EnablePackageProcessLoggingAndAssert=true -p:Configuration=Release -p:Platform=\"Any CPU\" TerapicFisicHelper.API.sln'
             }
         }
             
@@ -38,13 +38,14 @@ pipeline {
         }
         stage ('Deployment') {
             steps {
-                withCredentials([[$class:           'UsernamePasswordCF',
-                                   credentialsId:   'ff160e82-ab00-4cf1-afbd-7098e6ec36ed',
-                                   usernameVariable:'USERNAME',
-                                   passwordVariable:'PASSWORD']]){
-                    bat '/usr/local/bin/cf login -a https://api.us-south.cf.cloud.ibm.com -u $USERNAME -p $PASSWORD'
-                    bat '/usr/local/bin/cf push'
-                }
+//                 withCredentials([[cloudSpace:       'dev',
+//                                    credentialsId:   'ff160e82-ab00-4cf1-afbd-7098e6ec36ed',
+//                                    usernameVariable:'USERNAME',
+//                                    passwordVariable:'PASSWORD']]){
+//                     bat '/usr/local/bin/cf login -a https://api.us-south.cf.cloud.ibm.com -u $USERNAME -p $PASSWORD'
+//                     bat '/usr/local/bin/cf push'
+//                 }
+                pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [manifestFile: 'TerapicFisicHelper.Web/manifest.yml'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
             } 
 //             pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [manifestFile: 'TerapicFisicHelper.Web/manifest.yml'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
         }
