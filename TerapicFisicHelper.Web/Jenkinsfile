@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+	
+    stages {
+        stage ('Clean workspace') {
+            cleanWs()
+        }
+        stage ('Checkout code') {
+            git 'https://github.com/Patrick2OL/deploy-example'
+        } 
+            
+        stage ('Restore Nuget') {
+            bat '"D:/Archivos de programas zip/NuGet/nuget.exe" restore TerapicFisicHelper.API.sln'
+        }
+            
+        stage ('Build') {
+            bat '"C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe" TerapicFisicHelper.API.sln -p:Configuration=Release -p:Platform=\"Any CPU\"'
+        }
+            
+        stage ('Test') {
+            bat "dotnet test TerapicFisicHelper.NUnitTest/bin/Debug/net5.0/TerapicFisicHelper.NUnitTest.dll"
+        }
+            
+        stage ('Package') {
+            bat "dotnet pack --include-source"
+        }
+        stage ('Deployment') {
+            steps {
+                withCredentials([[$class:           'UsernamePasswordCF',
+                                   credentialsId:   'ff160e82-ab00-4cf1-afbd-7098e6ec36ed',
+                                   usernameVariable:'USERNAME',
+                                   passwordVariable:'PASSWORD']]){
+                    bat '/usr/local/bin/cf login -a https://api.us-south.cf.cloud.ibm.com -u $USERNAME -p $PASSWORD'
+                    bat '/usr/local/bin/cf push'
+                }
+            } 
+            pushToCloudFoundry cloudSpace: 'dev', credentialsId: 'ff160e82-ab00-4cf1-afbd-7098e6ec36ed', manifestChoice: [manifestFile: 'TerapicFisicHelper.Web/manifest.yml'], organization: 'u201915402@upc.edu.pe', pluginTimeout: '720', target: 'https://api.us-south.cf.cloud.ibm.com'
+        }
+
+    }
+}
